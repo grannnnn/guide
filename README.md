@@ -83,31 +83,39 @@ public IDocument GetDocument( string url )
         <div class="specifications">
             <div class="title_small">Характеристики</div>
             <div class="feature">
-                   <div class="item flex">
-                        <div class="name">Жанр</div>
-                        <div class="val"><a href="/playstation5/games/cat-122/">Спортивные </a></div>
-                    </div>
-                    <div class="item flex">
-                        <div class="name">Язык</div>
-                        <div class="val">Английский</div>
-                    </div>
-                    <div class="item flex">
-                        <div class="name">Дата выхода</div>
-                        <div class="val">06.10.2022</div>
-                    </div>
-                    <div class="item flex">
-                        <div class="name"> Издатель</div>
-                        <div class="val"><a href="/playstation5/games/?PROPERTY_PUBLISHER=4606">Electronic Arts</a></div>
-                    </div>
-                     <div class="item flex">
-                        <div class="name">Возраст</div>
-                        <div class="val">с 6 лет</div>
-                    </div>
-                     <div class="item flex">
-                        <div class="name">Артикул</div>
-                        <div class="val">190214</div>
-                    </div>
+             <div class="item flex">
+               <div class="name"> Жанр </div>
+               <div class="val"><a href="/comics/?filter_comics_genre=264445">Манга</a></div>
+             </div>
+             <div class="item flex">
+                <div class="name">Дата выхода</div>
+                <div class="val">22.02.2023</div>
               </div>
+              <div class="item flex">
+                  <div class="name">Артикул</div>
+                   <div class="val">681054</div>
+               </div>
+               <div class="item flex">
+                    <div class="name">Автор</div>
+                    <div class="val">ONE и Юскэ Мурата</div>
+               </div>
+               <div class="item flex">
+                    <div class="name"> Издатель в РФ</div>
+                    <div class="val">Азбука</div>
+               </div>
+                <div class="item flex">
+                      <div class="name">Серия комиксов</div>
+                       <div class="val">Манга</div>
+                </div>
+                 <div class="item flex">
+                     <div class="name"> Формат страниц</div>
+                      <div class="val">12,3 x 18,9 см.</div>
+                  </div>
+                   <div class="item flex">
+                        <div class="name">Количество страниц</div>
+                        <div class="val">384</div>
+                    </div>
+            </div>
         </div>
     ```
     ```C#
@@ -149,31 +157,39 @@ public IDocument GetDocument( string url )
         <div class="specifications">
             <div class="title_small">Характеристики</div>
             <div class="feature">
-                   <div class="item flex">
-                        <div class="name">Жанр</div>
-                        <div class="val"><a href="/playstation5/games/cat-122/">Спортивные </a></div>
-                    </div>
-                    <div class="item flex">
-                        <div class="name">Язык</div>
-                        <div class="val">Английский</div>
-                    </div>
-                    <div class="item flex">
-                        <div class="name">Дата выхода</div>
-                        <div class="val">06.10.2022</div>
-                    </div>
-                    <div class="item flex">
-                        <div class="name"> Издатель</div>
-                        <div class="val"><a href="/playstation5/games/?PROPERTY_PUBLISHER=4606">Electronic Arts</a></div>
-                    </div>
-                     <div class="item flex">
-                        <div class="name">Возраст</div>
-                        <div class="val">с 6 лет</div>
-                    </div>
-                     <div class="item flex">
-                        <div class="name">Артикул</div>
-                        <div class="val">190214</div>
-                    </div>
+             <div class="item flex">
+               <div class="name"> Жанр </div>
+               <div class="val"><a href="/comics/?filter_comics_genre=264445">Манга</a></div>
+             </div>
+             <div class="item flex">
+                <div class="name">Дата выхода</div>
+                <div class="val">22.02.2023</div>
               </div>
+              <div class="item flex">
+                  <div class="name">Артикул</div>
+                   <div class="val">681054</div>
+               </div>
+               <div class="item flex">
+                    <div class="name">Автор</div>
+                    <div class="val">ONE и Юскэ Мурата</div>
+               </div>
+               <div class="item flex">
+                    <div class="name"> Издатель в РФ</div>
+                    <div class="val">Азбука</div>
+               </div>
+                <div class="item flex">
+                      <div class="name">Серия комиксов</div>
+                       <div class="val">Манга</div>
+                </div>
+                 <div class="item flex">
+                     <div class="name"> Формат страниц</div>
+                      <div class="val">12,3 x 18,9 см.</div>
+                  </div>
+                   <div class="item flex">
+                        <div class="name">Количество страниц</div>
+                        <div class="val">384</div>
+                    </div>
+            </div>
         </div>
     ```
      ```C#
