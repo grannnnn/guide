@@ -17,7 +17,7 @@
 К примеру есть сайт книжек, на котором нам необходимо обработать какие-то определенные поля, к примеру: автор, название, количество страниц и прочие.
 
 # 2. Виды парсинга
-Примеры будут преимущественно на языке C# с плагином Angle Sharp.
+Примеры будут  на языке C# с плагином Angle Sharp.
 
 <br>
 Важная часть - получение документа, то есть html страницы.
@@ -84,6 +84,7 @@ public IDocument GetDocument( string url )
         Author = BookInfo.GetElementsByClassName("specifications")[0].GetElementsByClassName("item")[3].GetElementsByClassName("val")[0].TextContent;
     ```
     где в квадратных скобках находится номер эелемента (отсчет с 0).
+    
     Так же, если полей много или их количество меняется, можно брать поле с конца:
 
     ```C#
@@ -91,6 +92,8 @@ public IDocument GetDocument( string url )
          PublisherName = BookInfo.GetElementsByClassName("specifications")[0].GetElementsByClassName("item")[^4].GetElementsByClassName("val")[0].TextContent;
     ```
     где в квадратных скобках находится номер эелемента с конца перед знаком ^ (отсчет с 1).
+    
+    
 3. Сайты не пригодные для парсинга. Это могут быть сайты, которые не используют ни классы, ни id, либо же имеют запутанную систему контента, которую невозможно спарсить, либо другие причины.
 
     Примеры сайтов: <br>
