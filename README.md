@@ -8,7 +8,7 @@
 [2. Виды парсинга](#2-виды-парсинга)  
 
 [2.1 HTML](#21-html)  
-[2.2 API](#22-api)  
+
 
 # 1. Введение
 
@@ -48,29 +48,52 @@ public IDocument GetDocument( string url )
     Пример получения полей:
     
     ```C#
-        
+        var BookInfo = GetDocument(refToBook);
+        BookInfo.GetElementsByClassName("single-post-title product_title entry-title")[0].TextContent;
     ```
     
+    ```C#
+        var BookInfo = GetDocument(refToBook);
+         Name = BookInfo.GetElementsByClassName("product_name")[0].TextContent;
+    ```
+    
+    С этими поялми можно работать как со строкой:
+    ```C#
+        var BookInfo = GetDocument(refToBook);
+         Description = BookInfo.GetElementsByClassName("text_block")[0].TextContent
+                .Replace("\t", "")
+                .Replace("\n", "");
+    ```
+    
+    Так же можно и формировать из них ссылки, например на картинку книги:
+    ```C#
+        var BookInfo = GetDocument(refToBook);
+          Image = "https://www.gamepark.ru/comics" + element.GetElementsByClassName("img")[0].GetElementsByTagName("img")[0].Attributes["src"].Value;
+    ```
 2. Полю не соответствует ничего, но существует родительский класс, который возможно получить.
 
     Примеры сайтов: <br>
     
     1. https://speclit.su
     
+    
     Пример получения полей:
     
     ```C#
-        
+        var BookInfo = GetDocument(refToBook);
+        Author = BookInfo.GetElementsByClassName("specifications")[0].GetElementsByClassName("item")[3].GetElementsByClassName("val")[0].TextContent;
     ```
+    где в квадратных скобках находится номер эелемента (отсчет с 0).
+    Так же, если полей много или их количество меняется, можно брать поле с конца:
 
-
-
+    ```C#
+        var BookInfo = GetDocument(refToBook);
+         PublisherName = BookInfo.GetElementsByClassName("specifications")[0].GetElementsByClassName("item")[^4].GetElementsByClassName("val")[0].TextContent;
+    ```
+    где в квадратных скобках находится номер эелемента с конца перед знаком ^ (отсчет с 1).
 3. Сайты не пригодные для парсинга. Это могут быть сайты, которые не используют ни классы, ни id, либо же имеют запутанную систему контента, которую невозможно спарсить, либо другие причины.
 
     Примеры сайтов: <br>
 
     1. http://chitai-gorod.ru
     2. http://www.belygorod.ru
-
-
-## 2.2 API
