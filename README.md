@@ -57,19 +57,8 @@ public IDocument GetDocument( string url )
          Name = BookInfo.GetElementsByClassName("product_name")[0].TextContent;
     ```
     
-    С этими поялми можно работать как со строкой:
-    ```C#
-        var BookInfo = GetDocument(refToBook);
-         Description = BookInfo.GetElementsByClassName("text_block")[0].TextContent
-                .Replace("\t", "")
-                .Replace("\n", "");
-    ```
     
-    Так же можно и формировать из них ссылки и использовать по несколько раз, чтобы добраться до дочерних элементов, например на картинку книги:
-    ```C#
-        var BookInfo = GetDocument(refToBook);
-          Image = "https://www.gamepark.ru/comics" + element.GetElementsByClassName("img")[0].GetElementsByTagName("img")[0].Attributes["src"].Value;
-    ```
+    
 2. Полю не соответствует ничего, но существует родительский класс, который возможно получить.
 
     Примеры сайтов: <br>
@@ -85,13 +74,6 @@ public IDocument GetDocument( string url )
     ```
     где в квадратных скобках находится номер эелемента (отсчет с 0).
     
-    Так же, если полей много или их количество меняется, можно брать поле с конца:
-
-    ```C#
-        var BookInfo = GetDocument(refToBook);
-         PublisherName = BookInfo.GetElementsByClassName("specifications")[0].GetElementsByClassName("item")[^4].GetElementsByClassName("val")[0].TextContent;
-    ```
-    где в квадратных скобках находится номер эелемента с конца перед знаком ^ (отсчет с 1).
     
     
 3. Сайты не пригодные для парсинга. Это могут быть сайты, которые не используют ни классы, ни id, либо же имеют запутанную систему контента, которую невозможно спарсить, либо другие причины.
@@ -100,3 +82,36 @@ public IDocument GetDocument( string url )
 
     1. http://chitai-gorod.ru
     2. http://www.belygorod.ru
+
+Работа с самими элементами:
+1. С  поялми можно работать как со строкой:
+    ```C#
+        var BookInfo = GetDocument(refToBook);
+         Description = BookInfo.GetElementsByClassName("text_block")[0].TextContent
+                .Replace("\t", "")
+                .Replace("\n", "");
+    ```
+    
+   2.Если поля с одинаковыми названиями можно взять определенный элемент: 
+
+     ```C#
+        var BookInfo = GetDocument(refToBook);
+        Author = BookInfo.GetElementsByClassName("specifications")[0].GetElementsByClassName("item")[3].GetElementsByClassName("val")[0].TextContent;
+    ```
+    где в квадратных скобках находится номер эелемента (отсчет с 0).
+    3. Если полей много или их количество меняется, можно брать поле с конца:
+
+    ```C#
+        var BookInfo = GetDocument(refToBook);
+         PublisherName = BookInfo.GetElementsByClassName("specifications")[0].GetElementsByClassName("item")[^4].GetElementsByClassName("val")[0].TextContent;
+    ```
+    где в квадратных скобках находится номер эелемента с конца перед знаком ^ (отсчет с 1).
+    
+   4.Можно брать какие-нибудь атрибуты класса, например (атрибут data-q = 10):
+        element.GetElementsByClassName("label_radio")[0].GetElementsByTagName("input")[0].Attributes["data-q"].Value
+   6.Можно и формировать из них ссылки и использовать по несколько раз, чтобы добраться до дочерних элементов, например на картинку книги:
+    ```C#
+        var BookInfo = GetDocument(refToBook);
+          Image = "https://www.gamepark.ru/comics" + element.GetElementsByClassName("img")[0].GetElementsByTagName("img")[0].Attributes["src"].Value;
+    ```
+## 3 Алгоритм парсинга
