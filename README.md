@@ -65,7 +65,7 @@ public IDocument GetDocument( string url )
                 .Replace("\n", "");
     ```
     
-    Так же можно и формировать из них ссылки, например на картинку книги:
+    Так же можно и формировать из них ссылки и использовать по несколько раз, чтобы добраться до дочерних элементов, например на картинку книги:
     ```C#
         var BookInfo = GetDocument(refToBook);
           Image = "https://www.gamepark.ru/comics" + element.GetElementsByClassName("img")[0].GetElementsByTagName("img")[0].Attributes["src"].Value;
