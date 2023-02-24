@@ -9,7 +9,7 @@
 
 [2.1 HTML](#21-html)  
 
-[3. Алгоритм](#3-алгоритм) 
+[Дополнительно](Дополнительно) 
 
 
 # 1. Введение
@@ -223,4 +223,6 @@ public IDocument GetDocument( string url )
         var BookInfo = GetDocument(refToBook);
           Image = "https://www.gamepark.ru/comics" + element.GetElementsByClassName("img")[0].GetElementsByTagName("img")[0].Attributes["src"].Value;
     ```
-# 3. Алгоритм парсинга
+# Дополнительно
+Дополнительно есть видео на эту тему:
+https://www.youtube.com/watch?v=6NdQq3TrK70
